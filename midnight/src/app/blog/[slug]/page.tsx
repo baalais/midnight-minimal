@@ -1,7 +1,8 @@
-"use client"; // Add this line at the top
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { fetchBlogs } from "../../../utils/fetchBlogs";
+import styles from '../../styles/blogPost.module.css'; // Import your CSS module
 
 interface BlogPostProps {
   params: {
@@ -27,7 +28,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ params }) => {
     if (slug) getBlogPost(); // Call function if slug is available
   }, [slug]);
 
-  if (!blogPost) return <div className="text-center">Blog post not found.</div>; // Return if the blog post is not found
+  if (!blogPost) return <div className={styles.textCenter}>Blog post not found.</div>; // Return if the blog post is not found
 
   const imageUrl = blogPost.coverImage
     ? blogPost.coverImage
@@ -37,49 +38,53 @@ const BlogPost: React.FC<BlogPostProps> = ({ params }) => {
         .split('/').slice(0, -1).join('/')
     : 'https://static.wixstatic.com/media/be6ced_bcff3b85ac9e4882b8afd3d852842f7f~mv2.png'; // Fallback image
 
-  return (
-    <div className="flex flex-col min-h-screen">
-      <main className="container mx-auto px-4 md:px-8 py-10 flex-grow">
-        <h1 className="text-4xl font-bold mb-4">{blogPost.slug}</h1>
-        {imageUrl && (
-          <img
-            src={imageUrl}
-            alt={blogPost.slug}
-            className="w-full h-72 object-contain mb-4"
-          />
-        )}
-        <p className="text-gray-600 mb-4">{blogPost.excerpt}</p>
-        <div className="mt-4">
-          <h2 className="text-2xl font-semibold">Content</h2>
-          {blogPost.richContent?.nodes.map((node: any) => (
-            <div key={node.id}>
-              {node.type === "PARAGRAPH" && node.nodes[0]?.textData?.text && (
-                <p className="text-gray-700 mb-4">{node.nodes[0].textData.text}</p>
-              )}
-              {node.type === "HEADING" && node.nodes[0]?.textData?.text && (
-                <h3 className="text-2xl font-bold mt-4 mb-2">{node.nodes[0].textData.text}</h3>
-              )}
-              {node.type === "BULLETED_LIST" && (
-                <ul className="list-disc pl-5 mb-4">
-                  {node.nodes.map((listItem: any) => (
-                    <li key={listItem.id} className="text-gray-700 mb-2">
-                      {listItem.nodes.map((paragraph: any) => (
-                        paragraph.nodes[0]?.textData?.text && (
-                          <p key={paragraph.id} className="text-gray-700 mb-2">
-                            {paragraph.nodes[0].textData.text}
-                          </p>
-                        )
+    return (
+      <div className={`${styles.flex} ${styles.flexCol} ${styles.minHScreen}`}>
+        <main className={`${styles.container} ${styles.main}`}>
+          <h1 className={styles.text4xl}>{blogPost.slug}</h1>
+          <div className={styles.card}>
+            {imageUrl && (
+              <img
+                src={imageUrl}
+                alt={blogPost.slug}
+                className={`${styles.wFull} ${styles.h72} ${styles.objectContain} ${styles.mb4}`}
+              />
+            )}
+            <p className={`${styles.textGray600} ${styles.mb4}`}>{blogPost.excerpt}</p>
+            <div className={styles.mt4}>
+              <h2 className={styles.text2xl}>Content</h2>
+              {blogPost.richContent?.nodes.map((node: any) => (
+                <div key={node.id}>
+                  {node.type === "PARAGRAPH" && node.nodes[0]?.textData?.text && (
+                    <p className={`${styles.textGray700} ${styles.mb4}`}>{node.nodes[0].textData.text}</p>
+                  )}
+                  {node.type === "HEADING" && node.nodes[0]?.textData?.text && (
+                    <h3 className={`${styles.text2xl} ${styles.fontBold} ${styles.mt4} ${styles.mb2}`}>
+                      {node.nodes[0].textData.text}
+                    </h3>
+                  )}
+                  {node.type === "BULLETED_LIST" && (
+                    <ul className={`${styles.listDisc} ${styles.pl5} ${styles.mb4}`}>
+                      {node.nodes.map((listItem: any) => (
+                        <li key={listItem.id} className={`${styles.textGray700} ${styles.mb2}`}>
+                          {listItem.nodes.map((paragraph: any) => (
+                            paragraph.nodes[0]?.textData?.text && (
+                              <p key={paragraph.id} className={`${styles.textGray700} ${styles.mb2}`}>
+                                {paragraph.nodes[0].textData.text}
+                              </p>
+                            )
+                          ))}
+                        </li>
                       ))}
-                    </li>
-                  ))}
-                </ul>
-              )}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </main>
-    </div>
-  );
+          </div>
+        </main>
+      </div>
+    );    
 };
 
 export default BlogPost;

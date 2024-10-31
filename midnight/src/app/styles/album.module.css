@@ -1,0 +1,77 @@
+.flex {
+  display: flex;
+}
+
+.flexCol {
+  flex-direction: column;
+}
+
+.minHScreen {
+  min-height: 100vh; /* Ensure the minimum height is the full viewport height */
+  padding-top: 80px; /* Adjust based on your header height */
+}
+
+.container {
+  max-width: 1200px; /* Center the content */
+  margin: auto; /* Center the content */
+  padding: 1rem; /* Padding around the content */
+}
+
+.text4xl {
+  font-size: 2.25rem; /* Adjust as needed for your heading */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center the heading */
+  margin-bottom: 1.5rem; /* Space below the heading */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* More defined column size */
+  gap: 1rem; /* Space between grid items */
+}
+
+.card {
+  background-color: white; /* Card background */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  overflow: hidden; /* Hide overflow */
+  padding: 1rem; /* Padding inside the card */
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  height: 100%; /* Make card full height */
+}
+
+.img {
+  width: 100%; /* Full width image */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+.p {
+  padding: 0.5rem; /* Padding inside the card's text section */
+  flex-grow: 1; /* Allow the text area to take available space */
+  display: flex;
+  flex-direction: column; /* Stack title and text vertically */
+  justify-content: space-between; /* Space between items */
+}
+
+.text2xl {
+  font-size: 1.5rem; /* Size for blog title */
+  font-weight: semi-bold; /* Semi-bold text */
+  margin: 0; /* Remove margin */
+}
+
+.textGray700 {
+  color: #4a5568; /* Gray color */
+}
+
+.mb4 {
+  margin-bottom: 0.5rem; /* Space below */
+}
+
+.readMore {
+  color: #38b2ac; /* Teal color */
+  cursor: pointer; /* Pointer cursor for hover */
+  text-decoration: underline; /* Underline for link effect */
+  margin-top: auto; /* Push it to the bottom of the card */
+}

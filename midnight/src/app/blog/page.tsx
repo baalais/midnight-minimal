@@ -1,67 +1,56 @@
-"use client"
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable prefer-const */
-/* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { fetchBlogs } from "../../utils/fetchBlogs";
 import Link from "next/link";
+import styles from '../styles/album.module.css'; // Import your CSS module
 
-// Album komponentes definīcija
 const Album: React.FC = () => {
-  const [blogs, setBlogs] = useState<any[]>([]); // Stāvoklis, lai uzglabātu bloga ierakstus
+  const [blogs, setBlogs] = useState<any[]>([]); // State to hold blog posts
 
-  // Funkcija, lai iegūtu bloga ierakstus
   useEffect(() => {
     const getBlogs = async () => {
       try {
-        const blogPosts = await fetchBlogs(); // Iegūst bloga ierakstus
-        setBlogs(blogPosts); // Saglabā iegūtos ierakstus stāvoklī
+        const blogPosts = await fetchBlogs(); // Fetch blog posts
+        setBlogs(blogPosts); // Save fetched posts in state
       } catch (error) {
-        console.error("Failed to fetch blog posts:", error); // Izvada kļūdu konsolē
+        console.error("Failed to fetch blog posts:", error); // Log error
       }
     };
-    getBlogs(); // Izsauc funkciju, lai iegūtu bloga ierakstus
+    getBlogs(); // Call function to fetch blog posts
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="container mx-auto px-4 md:px-8 py-10 flex-grow">
-        <h1 className="text-4xl font-bold text-center mb-8">Blog Posts</h1> {/* Virsraksts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className={`${styles.flex} ${styles.flexCol} ${styles.minHScreen}`}>
+      <main className={styles.container}>
+        <h1 className={styles.text4xl}>Blog Posts</h1>
+        <div className={styles.grid}>
           {blogs.map((blog) => {
-            // Formāta attēla URL
             let imageUrl = blog.coverImage 
               ? blog.coverImage
-                  .replace('wix:image://', 'https://static.wixstatic.com/media/') // Nomaina sākuma daļu
-                  .replace('/v1/', '/') // Noņem /v1/
-                  .split('#')[0] // Noņem jebkādas vaicājuma daļas
-                  .split('/').slice(0, -1).join('/') // Noņem pēdējo daļu
-              : 'https://static.wixstatic.com/media/be6ced_bcff3b85ac9e4882b8afd3d852842f7f~mv2.png'; // Noklusējuma attēls
-
-            console.log('Formatted Image URL:', imageUrl); // Debugging output
+                  .replace('wix:image://', 'https://static.wixstatic.com/media/')
+                  .replace('/v1/', '/')
+                  .split('#')[0]
+                  .split('/').slice(0, -1).join('/')
+              : 'https://static.wixstatic.com/media/be6ced_bcff3b85ac9e4882b8afd3d852842f7f~mv2.png';
 
             return (
-              <div key={blog._id} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+              <div key={blog._id} className={styles.card}>
                 {imageUrl && (
                   <img
                     src={imageUrl}
                     alt={blog.slug}
-                    className="w-full h-48 object-contain" // Izmanto 'object-contain', lai attēls netiktu sagriezts
+                    className={styles.img}
                     onError={(e) => {
-                      e.currentTarget.src = '/fallback.png'; // Izmanto noklusējuma attēlu, ja notiek kļūda
+                      e.currentTarget.src = '/fallback.png'; // Fallback image
                     }}
                   />
                 )}
-                <div className="p-4">
-                  <h2 className="text-2xl font-semibold mt-2">{blog.slug}</h2> {/* Bloga virsraksts */}
-                  <p className="text-gray-700 mb-4">{blog.excerpt}</p> {/* Bloga īss apraksts */}
+                <div className={styles.p}>
+                  <h2 className={styles.text2xl}>{blog.slug}</h2>
+                  <p className={`${styles.textGray700} ${styles.mb4}`}>{blog.excerpt}</p>
                   <Link href={`/blog/${blog.slug}`}>
-                    <span className="text-teal-500 hover:underline cursor-pointer">Read more</span> {/* Saite uz pilnu rakstu */}
+                    <span className={styles.readMore}>Read more</span>
                   </Link>
                 </div>
               </div>
@@ -73,4 +62,4 @@ const Album: React.FC = () => {
   );
 };
 
-export default Album; 
+export default Album;

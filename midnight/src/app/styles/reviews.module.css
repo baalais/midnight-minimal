@@ -1,0 +1,40 @@
+.reviewsContainer {
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+  border-bottom: 1px solid #e2e8f0; /* border-b */
+  padding: 1rem 0; /* py-4 */
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+}
+
+.avatar {
+  border-radius: 50%; /* rounded-full */
+}
+
+.reviewRating {
+  display: flex;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.reviewHeading {
+  font-weight: bold; /* font-bold */
+}
+
+.reviewBody {
+  margin: 0; /* Reset margin */
+}
+
+.mediaImage {
+  width: 100px; /* Width for media images */
+  height: 50px; /* Height for media images */
+  object-fit: cover; /* object-cover */
+}
