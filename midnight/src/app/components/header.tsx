@@ -1,30 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState } from "react"; //JSX sintakse, state saglabāt datus kuri var mainīties auto atjauno komponenti kad dati mainas
 import Link from "next/link";
-import styles from '../styles/header.module.css'; // Import your CSS module
+import styles from '../styles/header.module.css';
 
+// React FC fukcionālais komponents(tipa definīcija, piem auto piev. children)
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false); // State for menu open/close
+  const [isOpen, setIsOpen] = useState(false); // Stāvoklis, lai noteiktu, vai izvēlne ir atvērta vai aizvērta
 
-  // Function to toggle the menu
+  // Funkcija, lai pārslēgtu izvēlni
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen); // Maina izvēlnes atvēršanas stāvokli
   };
 
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href="/">Midnight Runners</Link> {/* Link to home */}
+        <Link href="/">Midnight Runners</Link>
       </div>
-      <div className={styles.menuToggle} onClick={toggleMenu}>
+      <div className={styles.menuToggle} onClick={toggleMenu}>{/*Izvēlnes pārslēgšanas ikona*/}
         {isOpen ? (
-          <span>✖</span> // Close icon
+          <span>✖</span> // Aizvēršanas ikona, ja izvēlne ir atvērta
         ) : (
-          <span>☰</span> // Menu icon
+          <span>☰</span> // Izvēlnes ikona, ja izvēlne ir aizvērta
         )}
       </div>
-      <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
+      <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}> {/* Navigācijas izvēlne*/}
         <div className={styles.navItem}>
           <Link href="/" passHref>
             <button>Home</button>

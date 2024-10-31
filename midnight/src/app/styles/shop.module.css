@@ -1,49 +1,49 @@
 .container {
-  margin-top: 6rem; /* mt-24 */
+  margin-top: 6rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1rem; /* gap-4 */
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    grid-template-columns: repeat(2, 1fr); /*režģa izkārtojumā būs divas kolonnas, katra no tām ieņemot vienādu pieejamo platumu*/
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+    grid-template-columns: repeat(3, 1fr);/*režģa izkārtojumā būs trīs kolonnas, katra no tām ieņemot vienādu pieejamo platumu*/
   }
 }
 
 .productCard {
-  border: 1px solid #e5e7eb; /* border */
-  padding: 1rem; /* p-4 */
-  background-color: #fff; /* White background */
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  background-color: #fff;
 }
 
 .productImage {
   width: 100%;
-  height: 18rem; /* h-72 */
-  object-fit: contain; /* object-contain */
-  margin-bottom: 1rem; /* mb-4 */
+  height: 18rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }
 
 .productName {
-  font-weight: bold; /* You can customize font styles */
+  font-weight: bold;
 }
 
 .productDescription {
-  color: #4b5563; /* text-gray-700 */
-  margin-bottom: 1rem; /* mb-4 */
+  color: #4b5563;
+  margin-bottom: 1rem;
 }
 
 .viewProductLink {
-  color: #38b2ac; /* Teal color */
-  text-decoration: underline; /* hover:underline */
+  color: #38b2ac;
+  text-decoration: underline;
   cursor: pointer;
 }

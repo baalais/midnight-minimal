@@ -6,46 +6,46 @@
 
 .flexGrow {
   flex-grow: 1;
-  max-width: 1200px; /* Adjust as needed */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 .productImage {
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
-  max-height: 90vh; /* Adjust as needed */
-  object-fit: cover; /* object-cover */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ēna, kas ir 0 pikseļu nobīde pa horizontāli, 4 pikseļu nobīde pa vertikāli, 6 pikseļu izplūdums un 10% caurspīdīguma tumša krāsa.*/
+  max-height: 90vh;
+  object-fit: cover;
 }
 
 .productDetails {
   flex: 1;
   padding: 1.5rem;
-  background-color: #f9fafb; /* bg-gray-50 */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .productName {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 700; /* font-bold */
-  margin-top: 2rem; /* Larger gap above the product name */
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
 
 .productDescription {
-  color: #4b5563; /* text-gray-700 */
-  margin-bottom: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem; /*rem = pamatfonta izmēra*/
 }
 
 .productPrice {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 600; /* font-semibold */
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .border {
-  border-top: 1px solid #d1d5db; /* border-gray-300 */
+  border-top: 1px solid #d1d5db;
   margin: 1.5rem 0;
 }
 
@@ -54,17 +54,17 @@
 }
 
 .sectionTitle {
-  font-weight: 500; /* font-medium */
-  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+  font-size: 1.125rem;
   margin-bottom: 0.5rem;
 }
 
 .sectionDescription {
-  color: #4b5563; /* text-gray-600 */
+  color: #4b5563;
 }
 
 .reviewTitle {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 600; /* font-semibold */
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-top: 1rem;
 }

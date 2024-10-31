@@ -1,52 +1,51 @@
-/* blogPost.module.css */
 .container {
-  max-width: 800px; /* or your desired width */
-  margin: 0 auto; /* Center the container */
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 .text4xl {
-  font-size: 2.5rem; /* Larger heading */
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .text2xl {
-  font-size: 1.75rem; /* Subheading size */
+  font-size: 1.75rem;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .textGray600 {
-  color: #4B5563; /* Light gray for the excerpt */
+  color: #4B5563;
 }
 
 .textGray700 {
-  color: #374151; /* Darker gray for body text */
+  color: #374151;
 }
 
 .mb4 {
-  margin-bottom: 16px; /* Consistent bottom margin */
+  margin-bottom: 16px;
 }
 
 .mt4 {
-  margin-top: 16px; /* Consistent top margin */
+  margin-top: 16px;
 }
 
 .listDisc {
-  list-style-type: disc;
+  list-style-type: disc; /* sarakstā tiks izmantoti pilni apļi (disku) kā punktu simboli*/
   padding-left: 20px;
 }
 
 .pl5 {
-  padding-left: 20px; /* Padding for lists */
+  padding-left: 20px;
 }
 
 .card {
-  border: 1px solid #e5e7eb; /* Light border for card style */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Inner padding */
-  margin-bottom: 20px; /* Space between cards */
-  background-color: #ffffff; /* White background */
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
 }

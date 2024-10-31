@@ -61,12 +61,11 @@ export default function Home() {
               <h2>Games</h2>
               <p>Play the latest car-themed games and compete with others!</p>
               {/* Poga */}
-              {/* <a href="/games" className={styles.button}><FaGamepad /> Play Now</a> */}
+              <a href="/games" className={styles.button}>Play Now</a>
             </div>
           </section>
         </main>
       </div>
-      {/* <Footer />  Renderē kājējo informāciju */}
     </>
   );
 }

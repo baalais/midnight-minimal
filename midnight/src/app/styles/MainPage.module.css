@@ -32,7 +32,7 @@
   z-index: 2;
   font-family: 'Helvetica Neue', sans-serif;
   animation: slideInFromLeft 1s ease-in-out;
-  color: #ffffff; /* Ensure text is visible on the image */
+  color: #ffffff;
 }
 
 @keyframes slideInFromLeft {
@@ -45,7 +45,7 @@
   height: 600px;
   object-fit: cover;
   opacity: 0.7;
-  z-index: 1; /* Ensure the image is behind the text */
+  z-index: 1;/*Bilde aiz teksta*/
 }
 
 .main {
