@@ -34,7 +34,7 @@ const Reviews = () => {
             <span className="font-medium">{review.customer.display_name}</span> {/* Klienta vārds */}
           </div>
           <div className={styles.reviewRating}> {/* Vērtējuma sekcija */}
-            {Array.from({ length: review.rating }).map((_, index) => ( // Izveido masīvu ar garumu, kas vienāds ar review, pašreizējā vērtība _, index pašreizējo iterāciju
+            {Array.from({ length: review.rating }).map((_, index) => ( // Izveido masīvu ar garumu kas vienāds ar review, pašreizējā vērtība _, index pašreizējo iterāciju
               <Image src="/star.png" alt="Star" key={index} width={16} height={16} />
             ))}
           </div>
